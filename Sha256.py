@@ -1,7 +1,6 @@
 import hashlib
-
 import Crypto.Hash._RIPEMD160
-
+from Crypto.Hash._RIPEMD160 import hashlib
 
 class Encoder(object):
     def __init__(self, inputstr):
@@ -10,21 +9,23 @@ class Encoder(object):
     def encode(self):
         return hashlib.sha256(self.inputstr).hexdigest()
 
+    def __init__(self, data=None):
+        HashAlgo.__init__(self, hashFactory, data)
+
 
 encoder = Encoder(inputstr= 'sha256')
-encoder.encode()
-if __name__ == '__main__':
-    decode = _RIPEMD160
-decode.up
+inph = encoder.encode()
+print inph
 
 
-class Decoder(Encoder):
 
-    def decode1(self):
-        return _RIPEMD160
 
-enc = Decoder()
-print enc.decode1()
+
+
+
+
+
+
 
 
 
